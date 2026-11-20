@@ -1,5 +1,7 @@
 # Manual Generator
 
+![Manual Generator sample document pages](https://barbarakprokop.com/wp-content/uploads/2026/10/MG_COVER.webp)
+
 **Redesigning a complicated documentation workflow into a human-reviewed AI process.**
 
 I designed and implemented Manual Generator to turn scattered installation material into a structured, reviewable technical manual. The first version automated an existing process through Notion, n8n, Google Drive, AI and Google Slides. The second version simplified the workflow around a conversational ChatGPT Project: analyze what exists, identify missing information, ask targeted questions, prepare a draft and keep a human responsible for approval.
