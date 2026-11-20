@@ -1,0 +1,13 @@
+{
+  "name": "manual-generator-workflow-companion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sanitized technical examples of a human-reviewed installation manual workflow",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
