@@ -19,27 +19,28 @@ The key design choice: **an unanswered technical question is a visible workflow 
 ## Architecture: two iterations
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#111111","lineColor":"#555555","edgeLabelBackground":"#FFFFFF"}}}%%
+%%{init: {"theme":"base","themeVariables":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"15px","primaryColor":"#FF555A","primaryTextColor":"#FFFFFF","primaryBorderColor":"#FF555A","lineColor":"#858585","secondaryColor":"#858585","tertiaryColor":"#F0F0F0","edgeLabelBackground":"#FFFFFF"}}}%%
 flowchart TB
-    V1["V1 / STRUCTURED INPUT<br/>Notion"] --> AUTO["n8n / AI<br/>Orchestration and drafting"]
-    AUTO --> SLIDES["GOOGLE SLIDES<br/>Composition and review"]
-    SLIDES -.-> SHIFT["DESIGN REASSESSMENT<br/>Simplify the workflow"]
-    SHIFT -.-> V2["V2 / MIXED PROJECT MATERIAL<br/>Notes, images, dimensions"]
-    V2 --> ANALYZE["CHATGPT PROJECT<br/>Analyze, clarify and structure"]
+    V1("V1 / STRUCTURED INPUT<br/>Notion") --> AUTO("n8n / AI<br/>Orchestration and drafting")
+    AUTO --> SLIDES("GOOGLE SLIDES<br/>Composition and review")
+    SLIDES -.-> SHIFT("DESIGN REASSESSMENT<br/>Simplify the workflow")
+    SHIFT -.-> V2("V2 / MIXED PROJECT MATERIAL<br/>Notes, images, dimensions")
+    V2 --> ANALYZE("CHATGPT PROJECT<br/>Analyze, clarify and structure")
     ANALYZE --> GATE{"MISSING INFORMATION?"}
-    GATE -->|YES| QUESTIONS["ASK HUMAN<br/>Resolve uncertainty"]
+    GATE -->|YES| QUESTIONS("ASK HUMAN<br/>Resolve uncertainty")
     QUESTIONS --> ANALYZE
-    GATE -->|NO| DRAFT["DRAFT MANUAL<br/>For technical review"]
+    GATE -->|NO| DRAFT("DRAFT MANUAL<br/>For technical review")
     DRAFT --> REVIEW{"HUMAN APPROVAL"}
     REVIEW -->|CHANGES| ANALYZE
-    REVIEW -->|APPROVED| EXPORT["REVIEWED DOCUMENT<br/>PDF export"]
-    classDef ink fill:#111111,stroke:#111111,color:#FFFFFF,stroke-width:2px;
-    classDef outline fill:#FFFFFF,stroke:#111111,color:#111111,stroke-width:1.5px;
-    classDef muted fill:#F0F0F0,stroke:#777777,color:#111111,stroke-width:1.2px;
-    class V1,V2,GATE,REVIEW ink;
-    class AUTO,ANALYZE,DRAFT outline;
-    class SLIDES,SHIFT,QUESTIONS,EXPORT muted;
-    linkStyle default stroke:#555555,stroke-width:1.5px;
+    REVIEW -->|APPROVED| EXPORT("REVIEWED DOCUMENT<br/>PDF export")
+    classDef primary fill:#FF555A,stroke:#FF555A,color:#FFFFFF,stroke-width:1.5px;
+    classDef secondary fill:#858585,stroke:#858585,color:#FFFFFF,stroke-width:1.2px;
+    classDef annotation fill:#F0F0F0,stroke:#C7C7C7,color:#111111,stroke-width:1px;
+    classDef future fill:#F0F0F0,stroke:#999999,color:#555555,stroke-width:1.2px,stroke-dasharray:5 4;
+    class V1,V2,GATE,REVIEW primary;
+    class AUTO,ANALYZE,DRAFT secondary;
+    class SLIDES,SHIFT,QUESTIONS,EXPORT annotation;
+    linkStyle default stroke:#858585,stroke-width:1.5px;
 ```
 
 **Dashed transition:** V1 and V2 are successive design approaches, not one continuous production automation. The V2 path is a conceptual summary, not an executable ChatGPT Project graph.
