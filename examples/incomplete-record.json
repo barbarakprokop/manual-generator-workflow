@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "projectName": "Sample Installation",
+  "overview": "The client provided inconsistent notes about the installation.",
+  "materials": "Two panels.",
+  "dimensions": "",
+  "setup": "",
+  "contradictions": [
+    "One note says two panels; another says three."
+  ],
+  "expectedStatus": "needs_information"
+}
